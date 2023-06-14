@@ -1,0 +1,31 @@
+<div class="col-12">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="isExpanded = !isExpanded" color="white">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="height">Angular Material Sidenav</h1>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
+        <mat-list-item class="sidenav">
+          <mat-icon class="button-height" mat-list-icon>home</mat-icon> 
+          <span>&nbsp;&nbsp;<a *ngIf="isExpanded" routerLink="/customer">Customer</a></span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <br/>
+  <br/>
+  <br/>
+</div>
+  
+  
+  
